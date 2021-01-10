@@ -1,5 +1,6 @@
 import Link from "next/link";
 
+import Footer from "@/components/Footer";
 import Layout from "@/components/Layout";
 
 const Index = () => {
@@ -22,20 +23,7 @@ const Index = () => {
         </div>
       </Layout>
 
-      <footer className="bg-gray-200">
-        <div className="py-8 mx-auto prose">
-          <p className="text-center">
-            Copyleft {new Date().getFullYear()},{" "}
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              href="https://morello.dev"
-            >
-              Dennis Morello
-            </a>
-          </p>
-        </div>
-      </footer>
+      <Footer />
     </>
   );
 };
