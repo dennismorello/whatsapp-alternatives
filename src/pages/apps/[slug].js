@@ -1,8 +1,18 @@
-import getMessagingAppsList from "@/lib/getMessagingAppsList";
+import { NextSeo } from "next-seo";
+
+import getMessagingAppBySlug from "@/services/airtable/getMessagingAppBySlug";
+import getMessagingAppsList from "@/services/airtable/getMessagingAppsList";
 import { SECONDS_IN_A_DAY } from "@/utils/constants";
 
 const App = ({ app }) => {
-  return <h1 className="text-4xl font-black">{app.name}</h1>;
+  return (
+    <>
+      <NextSeo title={app.name} />
+      <h1 className="text-4xl font-black">{app.name}</h1>
+      <p>{app.shortDescription}</p>
+      <div dangerouslySetInnerHTML={{ __html: app.longDescriptionHtml }} />
+    </>
+  );
 };
 
 export async function getStaticPaths() {
@@ -16,8 +26,7 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  const apps = await getMessagingAppsList();
-  const app = apps.find((app) => app.slug === params.slug);
+  const app = await getMessagingAppBySlug(params.slug);
 
   return {
     props: { app },
