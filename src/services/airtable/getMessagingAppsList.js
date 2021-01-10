@@ -6,7 +6,7 @@ const getMessagingAppsList = async () => {
   return new Promise((resolve, reject) => {
     base("Apps")
       .select({
-        fields: ["Name", "Slug"],
+        fields: ["Name", "Slug", "Icon URL"],
         sort: [{ field: "Name", direction: "asc" }],
       })
       .eachPage(
@@ -15,8 +15,9 @@ const getMessagingAppsList = async () => {
             const id = record.getId();
             const name = record.get("Name");
             const slug = record.get("Slug");
+            const iconUrl = record.get("Icon URL");
 
-            allRecords.push({ id, name, slug });
+            allRecords.push({ id, name, slug, iconUrl });
           });
 
           fetchNextPage();

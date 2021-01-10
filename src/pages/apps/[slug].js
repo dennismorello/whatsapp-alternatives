@@ -1,17 +1,24 @@
 import { NextSeo } from "next-seo";
 
+import Layout from "@/components/Layout";
+import TextBlock from "@/components/TextBlock";
 import getMessagingAppBySlug from "@/services/airtable/getMessagingAppBySlug";
 import getMessagingAppsList from "@/services/airtable/getMessagingAppsList";
 import { SECONDS_IN_A_DAY } from "@/utils/constants";
 
 const App = ({ app }) => {
   return (
-    <>
+    <Layout>
       <NextSeo title={app.name} />
-      <h1 className="text-4xl font-black">{app.name}</h1>
-      <p>{app.shortDescription}</p>
-      <div dangerouslySetInnerHTML={{ __html: app.longDescriptionHtml }} />
-    </>
+      <TextBlock className="mx-auto">
+        <h1>{app.name}</h1>
+        <h2>{app.shortDescription}</h2>
+        <div
+          className="mt-8"
+          dangerouslySetInnerHTML={{ __html: app.longDescriptionHtml }}
+        />
+      </TextBlock>
+    </Layout>
   );
 };
 
