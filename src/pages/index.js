@@ -8,7 +8,7 @@ const Index = () => {
     <Layout className="min-h-screen">
       <Section className="flex flex-col justify-center flex-grow">
         <div className="flex flex-col items-center justify-center py-4 md:py-12">
-          <div className="max-w-2xl mx-auto text-left md:text-center">
+          <div className="max-w-2xl mx-auto text-center">
             <h1 className="text-4xl font-extrabold leading-10 tracking-tight text-blue-900 sm:leading-none sm:text-6xl lg:text-5xl xl:text-6xl">
               A curated list of alternative messaging apps to say{" "}
               <span className="text-blue-600">goodbye to WhatsApp.</span>
