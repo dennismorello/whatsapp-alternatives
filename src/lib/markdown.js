@@ -1,8 +1,8 @@
 import remark from "remark";
 import html from "remark-html";
 
-const markdownToHtml = async (markdown) => {
-  const processedContent = await remark().use(html).process(markdown);
+const markdownToHtml = (markdown) => {
+  const processedContent = remark().use(html).processSync(markdown);
   const htmlContent = processedContent.toString();
 
   return htmlContent;

@@ -5,7 +5,7 @@ const getMessagingAppBySlug = async (slug) =>
   new Promise((resolve, reject) => {
     base("Apps")
       .select({ filterByFormula: `{Slug} = "${slug}"` })
-      .firstPage(async (error, records) => {
+      .firstPage((error, records) => {
         if (error) {
           reject(error);
         }
@@ -19,7 +19,7 @@ const getMessagingAppBySlug = async (slug) =>
         const shortDescription = app.get("Short Description") ?? null;
         const longDescription = app.get("Long Description") ?? null;
         const longDescriptionHtml = longDescription
-          ? await markdownToHtml(longDescription)
+          ? markdownToHtml(longDescription)
           : null;
 
         resolve({
