@@ -12,7 +12,7 @@ const App = ({ app }) => {
     <Layout className="min-h-screen">
       <NextSeo title={app.name} />
       <Section className="flex-grow py-8 md:py-12">
-        <TextBlock>
+        <TextBlock className="mx-auto">
           <h1>{app.name}</h1>
           <h2>{app.shortDescription}</h2>
           <div
