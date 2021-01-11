@@ -11,7 +11,7 @@ const MobileNavMenu = ({ isOpen, onClose }) => (
       "absolute inset-x-0 top-0 z-50 p-2 transition origin-top-right transform md:hidden",
       {
         "scale-100 opacity-100": isOpen,
-        "pointer-events-none scale-90 opacity-0": !isOpen,
+        "pointer-events-none scale-95 opacity-0": !isOpen,
       }
     )}
   >

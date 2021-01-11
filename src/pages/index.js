@@ -11,7 +11,7 @@ const Index = () => {
           <div className="max-w-2xl mx-auto text-center">
             <h1 className="text-4xl font-extrabold leading-10 tracking-tight text-blue-600 sm:leading-none sm:text-6xl lg:text-5xl xl:text-6xl">
               A curated list of alternative messaging apps to say{" "}
-              <span className="text-emerald-500">goodbye to WhatsApp.</span>
+              <span className="text-green-500">goodbye to WhatsApp.</span>
             </h1>
 
             <p className="mt-3 text-base text-gray-500 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">

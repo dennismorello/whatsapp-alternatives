@@ -1,4 +1,3 @@
-const colors = require("tailwindcss/colors");
 const { fontFamily } = require("tailwindcss/defaultTheme");
 
 module.exports = {
@@ -6,7 +5,6 @@ module.exports = {
   darkMode: "media",
   theme: {
     extend: {
-      colors,
       fontFamily: {
         sans: ["'Open Sans'", ...fontFamily.sans],
       },
