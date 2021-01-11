@@ -1,13 +1,14 @@
 import cn from "classnames";
 
-const Layout = ({ className, ...otherProps }) => (
-  <div
-    className={cn(
-      "px-6 py-12 mx-auto max-w-7xl md:py-16 lg:py-20 lg:px-8",
-      className
-    )}
-    {...otherProps}
-  />
+import Footer from "@/components/Footer";
+import Navbar from "@/components/Header";
+
+const Layout = ({ className, children }) => (
+  <div className={cn("flex flex-col", className)}>
+    <Navbar className="flex-none" />
+    {children}
+    <Footer className="flex-none" />
+  </div>
 );
 
 export default Layout;
