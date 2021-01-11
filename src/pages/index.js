@@ -9,15 +9,15 @@ const Index = () => {
       <Section className="flex flex-col justify-center flex-grow">
         <div className="flex flex-col items-center justify-center py-4 md:py-12">
           <div className="max-w-2xl mx-auto text-center">
-            <h1 className="text-4xl font-extrabold leading-10 tracking-tight text-blue-900 sm:leading-none sm:text-6xl lg:text-5xl xl:text-6xl">
+            <h1 className="text-4xl font-extrabold leading-10 tracking-tight text-blue-600 sm:leading-none sm:text-6xl lg:text-5xl xl:text-6xl">
               A curated list of alternative messaging apps to say{" "}
-              <span className="text-blue-600">goodbye to WhatsApp.</span>
+              <span className="text-emerald-500">goodbye to WhatsApp.</span>
             </h1>
 
             <p className="mt-3 text-base text-gray-500 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">
               WhatsApp Alternatives lets you discover a plethora of messaging
               apps. Save your time by comparing different valuable alternatives,
-              and choose the one that fits your needs.
+              and choose the one that fits your tastes.
             </p>
           </div>
 
