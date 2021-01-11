@@ -1,20 +1,17 @@
-const colors = require("tailwindcss/colors");
-const defaultTheme = require("tailwindcss/defaultTheme");
-const typographyPlugin = require("@tailwindcss/typography");
+const { fontFamily } = require("tailwindcss/defaultTheme");
 
 module.exports = {
   purge: ["./src/pages/**/*.js", "./src/components/**/*.js"],
-  darkMode: false,
+  darkMode: "media",
   theme: {
     extend: {
-      colors,
       fontFamily: {
-        sans: ["'Open Sans'", ...defaultTheme.fontFamily.sans],
+        sans: ["'Open Sans'", ...fontFamily.sans],
       },
     },
   },
   variants: {
     extend: {},
   },
-  plugins: [typographyPlugin],
+  plugins: [require("@tailwindcss/typography")],
 };
