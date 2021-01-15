@@ -1,23 +1,21 @@
+import { Container, Heading } from "@chakra-ui/react";
 import { NextSeo } from "next-seo";
 
 import AppsGrid from "@/components/AppsGrid";
-import Layout from "@/components/Layout";
-import Section from "@/components/Section";
+import Nav from "@/components/Nav";
 import getMessagingAppsList from "@/services/airtable/getMessagingAppsList";
 import { SECONDS_IN_A_DAY } from "@/utils/constants";
 
 const Apps = ({ apps }) => {
   return (
-    <Layout className="min-h-screen">
+    <>
       <NextSeo title="Apps" />
-      <Section className="flex flex-col justify-center flex-grow">
-        <h1 className="text-5xl font-black text-center">Apps</h1>
-        <AppsGrid
-          apps={apps}
-          className="max-w-sm mx-auto mt-16 md:max-w-xl lg:max-w-3xl"
-        />
-      </Section>
-    </Layout>
+      <Nav />
+      <Container as="section" maxW="6xl">
+        <Heading as="h1">Apps</Heading>
+        <AppsGrid apps={apps} />
+      </Container>
+    </>
   );
 };
 

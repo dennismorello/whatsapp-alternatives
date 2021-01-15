@@ -13,11 +13,6 @@ class Document extends NextDocument {
           <meta name="application-name" content="WhatsApp Alternatives" />
           <meta name="msapplication-TileColor" content="#2d89ef" />
           <meta name="theme-color" content="#ffffff" />
-          <link rel="preconnect" href="https://fonts.gstatic.com" />
-          <link
-            href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700;800&display=swap"
-            rel="stylesheet"
-          />
           <link
             rel="apple-touch-icon"
             sizes="180x180"
@@ -39,7 +34,7 @@ class Document extends NextDocument {
           <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
         </Head>
 
-        <body className="antialiased">
+        <body>
           <Main />
           <NextScript />
         </body>

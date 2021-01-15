@@ -1,7 +1,12 @@
-const Logo = () => (
-  <div className="text-lg font-bold tracking-tighter text-transparent md:text-xl bg-clip-text bg-gradient-to-r from-green-500 to-blue-600">
-    WhatsApp Alternatives
-  </div>
-);
+import { Icon, useColorModeValue } from "@chakra-ui/react";
+import { ChatSolid } from "@graywolfai/react-heroicons";
+
+const Logo = (props) => {
+  const logoColor = useColorModeValue("cyan.400", "cyan.200");
+
+  return (
+    <Icon as={ChatSolid} boxSize={[8, 10, 12]} color={logoColor} {...props} />
+  );
+};
 
 export default Logo;

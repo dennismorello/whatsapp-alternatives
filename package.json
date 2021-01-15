@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint --fix . --ignore-path ./.gitignore",
-    "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc --ignore-path ./.gitignore"
+    "format": "prettier --write './**/*.{js,jsx,css,md,json}' --config ./.prettierrc --ignore-path ./.gitignore"
   },
   "husky": {
     "hooks": {
@@ -16,22 +16,22 @@
   },
   "lint-staged": {
     "./**/*.{js,jsx}": [
-      "eslint --fix"
+      "eslint --fix . --ignore-path ./.gitignore"
     ]
   },
   "dependencies": {
-    "@tailwindcss/typography": "^0.3.1",
+    "@chakra-ui/react": "^1.1.4",
+    "@emotion/react": "^11.1.4",
+    "@emotion/styled": "^11.0.0",
+    "@graywolfai/react-heroicons": "^1.2.1",
     "airtable": "^0.10.1",
-    "autoprefixer": "^10.2.1",
-    "classnames": "^2.2.6",
+    "framer-motion": "^3.2.1",
     "next": "10.0.5",
     "next-seo": "^4.17.0",
-    "postcss": "^8.2.4",
     "react": "17.0.1",
     "react-dom": "17.0.1",
     "remark": "^13.0.0",
-    "remark-html": "^13.0.1",
-    "tailwindcss": "^2.0.2"
+    "remark-html": "^13.0.1"
   },
   "resolutions": {
     "webpack": "^5.11.1"

@@ -1,36 +1,63 @@
-import Link from "next/link";
+import {
+  Box,
+  Button,
+  Container,
+  Heading,
+  Stack,
+  Text,
+  useColorModeValue,
+} from "@chakra-ui/react";
+import NextLink from "next/link";
 
-import Layout from "@/components/Layout";
-import Section from "@/components/Section";
+import Nav from "@/components/Nav";
 
 const Index = () => {
+  const titleColor = useColorModeValue("cyan.400", "cyan.200");
+  const subtitleColor = useColorModeValue("gray.500", "gray.400");
+
   return (
-    <Layout className="min-h-screen">
-      <Section className="flex flex-col justify-center flex-grow">
-        <div className="flex flex-col items-center justify-center py-4 md:py-12">
-          <div className="max-w-2xl mx-auto text-center">
-            <h1 className="text-4xl font-extrabold leading-10 tracking-tight text-blue-600 sm:leading-none sm:text-6xl lg:text-5xl xl:text-6xl">
-              A curated list of alternative messaging apps to say{" "}
-              <span className="text-green-500">goodbye to WhatsApp.</span>
-            </h1>
+    <>
+      <Nav />
+      <Container
+        as="section"
+        maxW="6xl"
+        mt={[10, 12, 16, 20, 28]}
+        pb={[8, 16, 20, 28, 32]}
+      >
+        <Heading
+          as="h1"
+          fontSize={["4xl", "5xl", "6xl"]}
+          fontWeight="extrabold"
+          textAlign="center"
+        >
+          <Box>Discover new apps.</Box>
+          <Box color={titleColor}>Say goodbye to WhatsApp.</Box>
+        </Heading>
+        <Text
+          color={subtitleColor}
+          mt={[3, 5]}
+          fontSize={["md", "lg", "xl"]}
+          textAlign="center"
+        >
+          Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem
+          cupidatat commodo. Elit sunt amet fugiat veniam occaecat fugiat
+          aliqua.
+        </Text>
 
-            <p className="mt-3 text-base text-gray-500 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">
-              WhatsApp Alternatives lets you discover a plethora of messaging
-              apps. Save your time by comparing different valuable alternatives,
-              and choose the one that fits your tastes.
-            </p>
-          </div>
-
-          <div className="mt-12 md:mt-16 lg:mt-20">
-            <Link href="/apps">
-              <a className="px-8 py-3 text-base font-bold text-white transition bg-blue-600 rounded-md shadow hover:bg-blue-700 md:py-4 md:text-lg lg:text-xl md:px-10 hover:shadow-md">
-                Browse Apps &rarr;
-              </a>
-            </Link>
-          </div>
-        </div>
-      </Section>
-    </Layout>
+        <Stack direction={["column", "row"]} justify="center" mt={[5, 8]}>
+          <NextLink href="/apps" passHref>
+            <Button colorScheme="cyan" size="lg">
+              Browse Apps
+            </Button>
+          </NextLink>
+          <NextLink href="/apps" passHref>
+            <Button colorScheme="cyan" variant="outline" size="lg">
+              GitHub
+            </Button>
+          </NextLink>
+        </Stack>
+      </Container>
+    </>
   );
 };
 

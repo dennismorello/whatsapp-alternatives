@@ -1,27 +1,56 @@
+import {
+  Box,
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  Container,
+  Heading,
+  Text,
+  useColorModeValue,
+} from "@chakra-ui/react";
+import NextLink from "next/link";
 import { NextSeo } from "next-seo";
 
-import Layout from "@/components/Layout";
-import Section from "@/components/Section";
-import TextBlock from "@/components/TextBlock";
+import Nav from "@/components/Nav";
 import getMessagingAppBySlug from "@/services/airtable/getMessagingAppBySlug";
 import getMessagingAppsList from "@/services/airtable/getMessagingAppsList";
 import { SECONDS_IN_A_DAY } from "@/utils/constants";
 
 const App = ({ app }) => {
+  const descriptionColor = useColorModeValue("gray.500", "gray.400");
+
   return (
-    <Layout className="min-h-screen">
+    <>
       <NextSeo title={app.name} />
-      <Section className="flex-grow py-8 md:py-12">
-        <TextBlock className="mx-auto">
-          <h1>{app.name}</h1>
-          <h2>{app.shortDescription}</h2>
-          <div
-            className="mt-8"
-            dangerouslySetInnerHTML={{ __html: app.longDescriptionHtml }}
-          />
-        </TextBlock>
-      </Section>
-    </Layout>
+      <Nav />
+      <Container as="section" maxW="6xl">
+        <Breadcrumb>
+          <BreadcrumbItem>
+            <NextLink href="/" passHref>
+              <BreadcrumbLink>Home</BreadcrumbLink>
+            </NextLink>
+          </BreadcrumbItem>
+          <BreadcrumbItem>
+            <NextLink href="/apps" passHref>
+              <BreadcrumbLink>Apps</BreadcrumbLink>
+            </NextLink>
+          </BreadcrumbItem>
+          <BreadcrumbItem isCurrentPage>
+            <BreadcrumbLink>{app.name}</BreadcrumbLink>
+          </BreadcrumbItem>
+        </Breadcrumb>
+
+        <Heading as="h1">{app.name}</Heading>
+        <Text fontSize={20} color={descriptionColor}>
+          {app.shortDescription}
+        </Text>
+
+        <Box
+          mt={8}
+          dangerouslySetInnerHTML={{ __html: app.longDescriptionHtml }}
+        />
+      </Container>
+    </>
   );
 };
 

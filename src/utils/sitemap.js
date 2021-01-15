@@ -9,10 +9,6 @@ const getStaticUrlsForSitemap = () =>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>${`${WEBSITE_URL}/about`}</loc>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
     <loc>${`${WEBSITE_URL}/apps`}</loc>
     <changefreq>daily</changefreq>
   </url>`;

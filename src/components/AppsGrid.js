@@ -1,19 +1,18 @@
-import Link from "next/link";
+import { Link, SimpleGrid } from "@chakra-ui/react";
+import NextLink from "next/link";
 
 import AppShortcut from "@/components/AppShortcut";
 
 const AppsGrid = ({ apps, ...otherProps }) => (
-  <div {...otherProps}>
-    <ul className="grid grid-cols-2 gap-12 place-items-center md:grid-cols-3 lg:grid-cols-4">
-      {apps.map((app) => (
-        <Link key={app.id} href={`/apps/${app.slug}`}>
-          <a>
-            <AppShortcut appName={app.name} iconUrl={app.iconUrl} />
-          </a>
+  <SimpleGrid columns={[2, 3, 4]} spacing={8} {...otherProps}>
+    {apps.map((app) => (
+      <NextLink key={app.id} href={`/apps/${app.slug}`} passHref>
+        <Link>
+          <AppShortcut appName={app.name} iconUrl={app.iconUrl} />
         </Link>
-      ))}
-    </ul>
-  </div>
+      </NextLink>
+    ))}
+  </SimpleGrid>
 );
 
 export default AppsGrid;
