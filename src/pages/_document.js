@@ -32,6 +32,20 @@ class Document extends NextDocument {
           />
           <link rel="manifest" href="/site.webmanifest" />
           <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
+          <link
+            rel="preload"
+            href="/fonts/open-sans-v18-latin/open-sans-v18-latin-800.woff2"
+            as="font"
+            type="font/woff2"
+            crossOrigin=""
+          />
+          <link
+            rel="preload"
+            href="/fonts/raleway-v18-latin/raleway-v18-latin-regular.woff2"
+            as="font"
+            type="font/woff2"
+            crossOrigin=""
+          />
         </Head>
 
         <body>
