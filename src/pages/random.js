@@ -22,12 +22,16 @@ const Random = () => {
 
   return (
     <>
-      <NextSeo title="Random App" />
+      <NextSeo title="I'm Feeling Lucky" />
       <Nav />
       <Container as="section" maxW="6xl">
-        <VStack>
-          <Spinner color={spinnerColor} size="lg" />
-          <Text>Picking an app...</Text>
+        <VStack
+          mt={[16, null, 20, 28]}
+          pb={[20, null, 28, 32]}
+          spacing={[3, null, 4]}
+        >
+          <Spinner color={spinnerColor} boxSize={[6, 8, 10]} />
+          <Text fontSize={["md", null, "lg"]}>Picking an app...</Text>
         </VStack>
       </Container>
     </>

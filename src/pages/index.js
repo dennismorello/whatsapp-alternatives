@@ -31,18 +31,19 @@ const Index = () => {
           fontWeight="extrabold"
           textAlign="center"
         >
-          <Box>Discover new apps.</Box>
-          <Box color={titleColor}>Say goodbye to WhatsApp.</Box>
+          <Box>A curated list of apps</Box>
+          <Box color={titleColor}>to say goodbye to WhatsApp</Box>
         </Heading>
         <Text
           color={subtitleColor}
           mt={[3, 5]}
           fontSize={["md", "lg", "xl"]}
+          maxW={["md", "lg", "xl", "2xl"]}
+          mx="auto"
           textAlign="center"
         >
-          Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem
-          cupidatat commodo. Elit sunt amet fugiat veniam occaecat fugiat
-          aliqua.
+          Browse and compare the best messaging apps. Be aware of features,
+          privacy and cost of each app, so you can&apos;t really pick wrong.
         </Text>
 
         <Stack direction={["column", "row"]} justify="center" mt={[5, 8]}>

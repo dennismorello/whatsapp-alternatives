@@ -11,8 +11,22 @@ const Apps = ({ apps }) => {
     <>
       <NextSeo title="Apps" />
       <Nav />
-      <Container as="section" maxW="6xl">
-        <Heading as="h1">Apps</Heading>
+      <Container
+        as="section"
+        maxW="6xl"
+        mt={[5, 6, 8, 10, 14]}
+        pb={[4, 8, 10, 16, 16]}
+        px={[16, null, 20]}
+      >
+        <Heading
+          as="h1"
+          fontSize={["3xl", null, null, null, "4xl"]}
+          fontWeight="black"
+          mb={[8, null, 12]}
+          textAlign="center"
+        >
+          Apps
+        </Heading>
         <AppsGrid apps={apps} />
       </Container>
     </>
