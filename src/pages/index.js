@@ -1,6 +1,5 @@
 import {
   Box,
-  Button,
   Container,
   Heading,
   Stack,
@@ -10,9 +9,11 @@ import {
 import NextLink from "next/link";
 
 import Nav from "@/components/Nav";
+import ResponsiveButton from "@/components/ResponsiveButton";
+import usePrimaryColor from "@/hooks/usePrimaryColor";
 
 const Index = () => {
-  const titleColor = useColorModeValue("cyan.400", "cyan.200");
+  const titleColor = usePrimaryColor();
   const subtitleColor = useColorModeValue("gray.500", "gray.400");
 
   return (
@@ -46,14 +47,12 @@ const Index = () => {
 
         <Stack direction={["column", "row"]} justify="center" mt={[5, 8]}>
           <NextLink href="/apps" passHref>
-            <Button colorScheme="cyan" size="lg">
-              Browse Apps
-            </Button>
+            <ResponsiveButton colorScheme="cyan">Browse Apps</ResponsiveButton>
           </NextLink>
-          <NextLink href="/apps" passHref>
-            <Button colorScheme="cyan" variant="outline" size="lg">
-              GitHub
-            </Button>
+          <NextLink href="/random" passHref>
+            <ResponsiveButton colorScheme="cyan" variant="outline">
+              I&apos;m Feeling Lucky
+            </ResponsiveButton>
           </NextLink>
         </Stack>
       </Container>

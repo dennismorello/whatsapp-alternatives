@@ -11,6 +11,10 @@ const getStaticUrlsForSitemap = () =>
   <url>
     <loc>${`${WEBSITE_URL}/apps`}</loc>
     <changefreq>daily</changefreq>
+  </url>
+  <url>
+    <loc>${`${WEBSITE_URL}/random`}</loc>
+    <changefreq>weekly</changefreq>
   </url>`;
 
 const getAppsUrlsForSitemap = (apps) =>

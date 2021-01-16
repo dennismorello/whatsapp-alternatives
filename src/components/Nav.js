@@ -19,7 +19,7 @@ const Nav = (props) => (
         </a>
       </NextLink>
 
-      <HStack as={List} spacing={8}>
+      <HStack as={List} spacing={[4, 6, 8]}>
         <ListItem>
           <NextLink href="/apps" passHref>
             <Link>Apps</Link>
