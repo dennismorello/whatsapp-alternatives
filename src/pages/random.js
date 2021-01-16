@@ -5,7 +5,7 @@ import { useEffect } from "react";
 
 import Nav from "@/components/Nav";
 import usePrimaryColor from "@/hooks/usePrimaryColor";
-import getRandomMessagingApp from "@/services/airtable/getRandomMessagingApp";
+import { fetchJson } from "@/utils/fetch";
 
 const Random = () => {
   const spinnerColor = usePrimaryColor();
@@ -13,7 +13,7 @@ const Random = () => {
 
   useEffect(() => {
     const redirectToRandomAppPage = async () => {
-      const randomApp = await getRandomMessagingApp();
+      const randomApp = await fetchJson("/api/apps/random");
       router.replace(`/apps/${randomApp.slug}`);
     };
 
