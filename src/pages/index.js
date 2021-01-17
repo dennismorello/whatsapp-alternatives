@@ -1,52 +1,31 @@
-import {
-  Box,
-  Container,
-  Heading,
-  Stack,
-  Text,
-  useColorModeValue,
-} from "@chakra-ui/react";
+import { Box, Stack } from "@chakra-ui/react";
 import NextLink from "next/link";
 
+import Hero from "@/components/Hero";
 import Nav from "@/components/Nav";
 import ResponsiveButton from "@/components/ResponsiveButton";
 import usePrimaryColor from "@/hooks/usePrimaryColor";
 
 const Index = () => {
   const titleColor = usePrimaryColor();
-  const subtitleColor = useColorModeValue("gray.500", "gray.400");
 
   return (
     <>
       <Nav />
-      <Container
-        as="section"
-        maxW="6xl"
-        mt={[10, 12, 16, 20, 28]}
-        pb={[8, 16, 20, 28, 32]}
+      <Hero
+        title={
+          <Box>
+            A curated list of apps
+            <br />
+            <Box as="span" color={titleColor}>
+              to say goodbye to WhatsApp
+            </Box>
+          </Box>
+        }
+        subtitle="Browse and compare the best messaging apps. Be aware of features,
+        privacy and cost of each app, so you can't really pick wrong."
       >
-        <Heading
-          as="h1"
-          fontSize={["4xl", "5xl", "6xl"]}
-          fontWeight="extrabold"
-          textAlign="center"
-        >
-          <Box>A curated list of apps</Box>
-          <Box color={titleColor}>to say goodbye to WhatsApp</Box>
-        </Heading>
-        <Text
-          color={subtitleColor}
-          mt={[3, 5]}
-          fontSize={["md", "lg", "xl"]}
-          maxW={["md", "lg", "xl", "2xl"]}
-          mx="auto"
-          textAlign="center"
-        >
-          Browse and compare the best messaging apps. Be aware of features,
-          privacy and cost of each app, so you can&apos;t really pick wrong.
-        </Text>
-
-        <Stack direction={["column", "row"]} justify="center" mt={[5, 8]}>
+        <Stack direction={["column", "row"]} justify="center">
           <NextLink href="/apps" passHref>
             <ResponsiveButton colorScheme="cyan">Browse Apps</ResponsiveButton>
           </NextLink>
@@ -56,7 +35,7 @@ const Index = () => {
             </ResponsiveButton>
           </NextLink>
         </Stack>
-      </Container>
+      </Hero>
     </>
   );
 };

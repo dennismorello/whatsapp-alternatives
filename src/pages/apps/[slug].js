@@ -23,8 +23,8 @@ const App = ({ app }) => {
         as="section"
         maxW="6xl"
         mt={[6, null, 8, 10, 14]}
-        pb={[8, null, 10, 16, 16]}
-        px={[20, null, 24, 28, 32]}
+        pb={[12, null, 16, 20, 28]}
+        px={[4, 8, 12, 16, 20]}
       >
         <Heading as="h1" fontWeight="black">
           {app.name}
