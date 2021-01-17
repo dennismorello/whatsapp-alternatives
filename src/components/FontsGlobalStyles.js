@@ -304,6 +304,6 @@ const ralewayFont = css`
   }
 `;
 
-const Fonts = () => <Global styles={[openSansFont, ralewayFont]} />;
+const FontsGlobalStyles = () => <Global styles={[openSansFont, ralewayFont]} />;
 
-export default Fonts;
+export default FontsGlobalStyles;

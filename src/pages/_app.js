@@ -2,11 +2,15 @@ import { ChakraProvider } from "@chakra-ui/react";
 import Head from "next/head";
 import { DefaultSeo } from "next-seo";
 
-import Fonts from "@/components/Fonts";
+import FontsGlobalStyles from "@/components/FontsGlobalStyles";
+import NProgressGlobalStyles from "@/components/NProgressGlobalStyles";
 import defaultSeo from "@/next-seo.config";
 import theme from "@/theme";
+import configureAndRunNProgress from "@/utils/nprogress";
 
-function App({ Component, pageProps }) {
+configureAndRunNProgress();
+
+const App = ({ Component, pageProps }) => {
   return (
     <>
       <Head>
@@ -15,11 +19,12 @@ function App({ Component, pageProps }) {
       <DefaultSeo {...defaultSeo} />
 
       <ChakraProvider theme={theme}>
-        <Fonts />
+        <FontsGlobalStyles />
+        <NProgressGlobalStyles />
         <Component {...pageProps} />
       </ChakraProvider>
     </>
   );
-}
+};
 
 export default App;
