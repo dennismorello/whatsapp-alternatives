@@ -27,10 +27,12 @@ const Index = () => {
       >
         <Stack direction={["column", "row"]} justify="center">
           <NextLink href="/apps" passHref>
-            <ResponsiveButton colorScheme="cyan">Browse Apps</ResponsiveButton>
+            <ResponsiveButton as="a" colorScheme="cyan">
+              Browse Apps
+            </ResponsiveButton>
           </NextLink>
           <NextLink href="/random" passHref>
-            <ResponsiveButton colorScheme="cyan" variant="outline">
+            <ResponsiveButton as="a" colorScheme="cyan" variant="outline">
               I&apos;m Feeling Lucky
             </ResponsiveButton>
           </NextLink>
