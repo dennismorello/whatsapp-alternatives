@@ -20,7 +20,12 @@ const AppCard = ({ appName, iconUrl, rating, ...otherProps }) => {
     >
       <AppIcon alt={`${appName} icon`} iconUrl={iconUrl} size={iconSize} />
 
-      <VStack align="flex-start" flexGrow={1} h={iconSize}>
+      <VStack
+        align="flex-start"
+        flexGrow={1}
+        h={iconSize}
+        spacing={[0, null, 2]}
+      >
         <Text fontSize={["lg", null, "xl"]} fontWeight="bold">
           {appName}
         </Text>

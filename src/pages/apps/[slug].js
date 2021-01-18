@@ -2,7 +2,7 @@ import {
   Box,
   Container,
   Heading,
-  HStack,
+  Stack,
   Text,
   useColorModeValue,
   VStack,
@@ -29,14 +29,18 @@ const App = ({ app }) => {
         pb={[12, null, 16, 20, 28]}
         px={[4, 8, 12, 16, 20]}
       >
-        <HStack spacing={4}>
+        <Stack
+          align="center"
+          direction={["row-reverse", null, "row"]}
+          spacing={4}
+        >
           <AppIcon
             alt={`${app.name} icon`}
             iconUrl={app.icons[0]?.thumbnails.large.url}
-            size={[12, 16, 20]}
+            size={[16, null, 20]}
           />
 
-          <VStack align="flex-start">
+          <VStack align="flex-start" flexGrow={1} spacing={[0, null, 2]}>
             <Heading as="h1" fontWeight="black">
               {app.name}
             </Heading>
@@ -48,7 +52,7 @@ const App = ({ app }) => {
               {app.shortDescription}
             </Text>
           </VStack>
-        </HStack>
+        </Stack>
 
         <Box
           mt={[8, null, 12]}
