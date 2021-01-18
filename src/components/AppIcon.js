@@ -1,13 +1,16 @@
-import { Box, useColorModeValue } from "@chakra-ui/react";
+import { Box } from "@chakra-ui/react";
 import NextImage from "next/image";
 
-const AppIcon = ({ alt, iconUrl, iconSize = 20, ...otherProps }) => {
-  const appShadow = useColorModeValue("sm", "dark-lg");
+import useShadow from "@/hooks/useShadow";
+
+const AppIcon = ({ alt, iconUrl, size = 20, ...otherProps }) => {
+  const appShadow = useShadow();
 
   return (
     <Box
-      boxSize={iconSize}
+      boxSize={size}
       boxShadow={appShadow}
+      minW={size}
       rounded="2xl"
       overflow="hidden"
       {...otherProps}

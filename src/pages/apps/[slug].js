@@ -2,11 +2,14 @@ import {
   Box,
   Container,
   Heading,
+  HStack,
   Text,
   useColorModeValue,
+  VStack,
 } from "@chakra-ui/react";
 import { NextSeo } from "next-seo";
 
+import AppIcon from "@/components/AppIcon";
 import Nav from "@/components/Nav";
 import getMessagingAppBySlug from "@/services/airtable/getMessagingAppBySlug";
 import getMessagingAppsList from "@/services/airtable/getMessagingAppsList";
@@ -26,17 +29,26 @@ const App = ({ app }) => {
         pb={[12, null, 16, 20, 28]}
         px={[4, 8, 12, 16, 20]}
       >
-        <Heading as="h1" fontWeight="black">
-          {app.name}
-        </Heading>
-        <Text
-          color={descriptionColor}
-          fontSize={["lg", null, "xl"]}
-          fontWeight="semibold"
-          mt={[2, null, 4]}
-        >
-          {app.shortDescription}
-        </Text>
+        <HStack spacing={4}>
+          <AppIcon
+            alt={`${app.name} icon`}
+            iconUrl={app.icons[0]?.thumbnails.large.url}
+            size={[12, 16, 20]}
+          />
+
+          <VStack align="flex-start">
+            <Heading as="h1" fontWeight="black">
+              {app.name}
+            </Heading>
+            <Text
+              color={descriptionColor}
+              fontSize={["lg", null, "xl"]}
+              fontWeight="semibold"
+            >
+              {app.shortDescription}
+            </Text>
+          </VStack>
+        </HStack>
 
         <Box
           mt={[8, null, 12]}
