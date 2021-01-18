@@ -15,9 +15,10 @@ const getMessagingAppsList = async () => {
             const name = record.get("Name");
             const slug = record.get("Slug");
             const icons = record.get("Icons") ?? [];
+            const platforms = record.get("Platforms") ?? [];
             const rating = record.get("Rating") ?? null;
 
-            allRecords.push({ id, name, slug, icons, rating });
+            allRecords.push({ id, name, slug, icons, platforms, rating });
           });
 
           fetchNextPage();

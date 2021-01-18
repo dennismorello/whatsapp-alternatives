@@ -15,6 +15,7 @@ const getMessagingAppBySlug = async (slug) =>
         const id = app.getId();
         const name = app.get("Name");
         const icons = app.get("Icons") ?? [];
+        const platforms = app.get("Platforms") ?? null;
         const rating = app.get("Rating") ?? null;
         const website = app.get("Website") ?? null;
         const shortDescription = app.get("Short Description") ?? null;
@@ -30,6 +31,7 @@ const getMessagingAppBySlug = async (slug) =>
           icons,
           shortDescription,
           longDescriptionHtml,
+          platforms,
           rating,
           website,
         });

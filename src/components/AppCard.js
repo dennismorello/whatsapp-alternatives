@@ -1,13 +1,14 @@
 import { HStack, Text, VStack } from "@chakra-ui/react";
 
 import AppIcon from "@/components/AppIcon";
+import PlatformsTagsList from "@/components/PlatformsTagsList";
 import useBackgroundColor from "@/hooks/useBackgroundColor";
 import useShadow from "@/hooks/useShadow";
 
-const AppCard = ({ appName, iconUrl, rating, ...otherProps }) => {
+const AppCard = ({ appName, iconUrl, platforms, rating, ...otherProps }) => {
   const backgroundColor = useBackgroundColor();
   const cardShadow = useShadow();
-  const iconSize = [12, null, 16];
+  const iconSize = [16, null, 20];
 
   return (
     <HStack
@@ -22,14 +23,19 @@ const AppCard = ({ appName, iconUrl, rating, ...otherProps }) => {
 
       <VStack
         align="flex-start"
+        justify="space-between"
         flexGrow={1}
         h={iconSize}
         spacing={[0, null, 2]}
       >
-        <Text fontSize={["lg", null, "xl"]} fontWeight="bold">
-          {appName}
-        </Text>
-        <Text fontSize={["md", null, "lg"]}>{rating}/5</Text>
+        <HStack justify="space-between" w="full">
+          <Text fontSize={["lg", null, "xl"]} fontWeight="bold">
+            {appName}
+          </Text>
+          <Text fontSize={["md", null, "lg"]}>{rating}/5</Text>
+        </HStack>
+
+        <PlatformsTagsList platforms={platforms} />
       </VStack>
     </HStack>
   );

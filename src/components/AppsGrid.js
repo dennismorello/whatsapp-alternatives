@@ -20,6 +20,7 @@ const AppsGrid = ({ apps, ...otherProps }) => {
             <AppCard
               appName={app.name}
               iconUrl={app.icons[0]?.thumbnails.large.url}
+              platforms={app.platforms}
               rating={app.rating}
             />
           </Link>
