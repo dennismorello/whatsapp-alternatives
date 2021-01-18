@@ -3,7 +3,6 @@ import { css, Global } from "@emotion/react";
 const nprogressStyle = css`
   #nprogress {
     --nprogress-color: #0bc5ea;
-    --nprogress-color-dark: #9decf9;
 
     pointer-events: none;
   }
@@ -35,13 +34,8 @@ const nprogressStyle = css`
   }
 
   @media (prefers-color-scheme: dark) {
-    #nprogress .bar {
-      background: var(--nprogress-color-dark);
-    }
-
-    #nprogress .peg {
-      box-shadow: 0 0 10px var(--nprogress-color-dark),
-        0 0 5px var(--nprogress-color-dark);
+    #nprogress {
+      --nprogress-color: #9decf9;
     }
   }
 `;
